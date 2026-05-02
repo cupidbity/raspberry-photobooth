@@ -11,7 +11,7 @@
 | Arcade button (24mm illuminated) | .110 spade terminals |
 | 12V LiPo battery | Main power source |
 | 12V to 5V DC-DC converter | Steps battery down to 5V |
-| WAGO lever connectors (3-port) | Splits 5V rail to Pi and printer |
+| WAGO lever connectors (3-port) | Distributes 5V to Pi and printer |
 
 ## Power architecture
 
@@ -24,33 +24,39 @@ This build runs entirely off a 12V LiPo battery. The power chain looks like this
 12V to 5V DC-DC converter
       |
       v
-   +5V rail  -----+----- WAGO connector (+)  ---> Raspberry Pi (USB-C)
+   +5V rail  -----+----- WAGO connector (+)  ---> Pi GPIO pin 2 (5V)
       |           |
       |           +----- WAGO connector (+)  ---> Printer VH (pin 3)
       |
-   GND rail  -----+----- WAGO connector (-)  ---> Raspberry Pi GND
+   GND rail  -----+----- WAGO connector (-)  ---> Pi GPIO pin 6 (GND)
                   |
                   +----- WAGO connector (-)  ---> Printer GND (pin 1)
 ```
 
-Two 3-port WAGO lever connectors split the converter's 5V output:
+Two 3-port WAGO lever connectors join the converter's 5V output to both loads in parallel:
 
-- **WAGO #1 (positive rail):** converter +5V in, Pi +5V out, printer VH out
-- **WAGO #2 (ground rail):** converter GND in, Pi GND out, printer GND out
+- **WAGO #1 (positive rail):** converter +5V in, Pi 5V GPIO out, printer VH out
+- **WAGO #2 (ground rail):** converter GND in, Pi GND GPIO out, printer GND out
 
-This arrangement lets the Pi and printer share the same battery and converter while keeping the wiring tidy and easy to re-route. WAGOs are tool-free, so you can rewire on the fly without crimping or soldering.
+A WAGO is a junction connector - all three ports are on the same electrical node, so both the Pi and the printer are pulling from the same 5V supply in parallel.
 
-### Why both share the same converter
+### Powering the Pi via GPIO 5V (pin 2) - what to know
 
-Earlier in development the printer was powered separately from the Pi (Pi on a wall USB-C, printer on its own 5V supply) because the print head's 1.5A peak draw was suspected to be browning out a single shared supply. Once we confirmed the DC-DC converter could handle the combined load (5V/5A rated, well above the ~3-4A combined steady draw), it was simpler to consolidate to one power source via WAGOs.
+This build feeds the Pi through GPIO pin 2 (5V) and pin 6 (GND) **rather than the USB-C port**. This is the simplest way to integrate the Pi into a battery-powered project that already has a 5V rail, but it has trade-offs:
+
+- **No protection.** The Pi 5's USB-C input has a polyfuse, reverse-polarity protection, and inrush current limiting. The GPIO 5V pin bypasses all of that. A short or surge in the wiring will go straight into the Pi's power management chip.
+- **No PD negotiation.** The Pi 5 normally requests 5V/5A via USB-C Power Delivery. When fed via GPIO, it just runs on whatever the rail is providing. Make sure the rail is solidly 5.0V (not 4.8 or 5.2) under load. Sag below ~4.7V can cause undervoltage warnings or instability; rising above 5.25V can damage the Pi.
+- **No undervoltage detection on boot.** If the battery sags badly during boot, the Pi may not warn you the way a USB-C supply would.
+
+For a permanent build, a USB-C breakout board (terminal block on one side, USB-C plug on the other) is safer and only costs a few dollars more. It lets the WAGO feed the breakout, and the breakout connects via USB-C to the Pi - keeping all the protection circuitry in play. If you replicate this setup and care about reliability, do it that way.
+
+The current GPIO-feed approach works fine for a project where the battery is well-regulated and the wiring is short and clean, just be aware of the risk profile.
+
+### Why the Pi and printer share the same converter
+
+Earlier in development the printer was powered separately (Pi on a wall USB-C, printer on its own 5V supply) because the print head's 1.5A peak draw was suspected to be browning out a single shared supply. Once the DC-DC converter was confirmed to handle the combined load (5V/5A rated, well above the ~3-4A combined steady draw), it was simpler to consolidate to one battery + converter via WAGOs.
 
 If you replicate this and run into print quality issues that look like power sag (blank prints, faint prints, Pi resetting during prints), split them onto separate supplies.
-
-### Powering the Pi via 5V GPIO is NOT what's happening here
-
-Important clarification: the Pi is powered via its **USB-C port**, not the GPIO 5V pins. The WAGO splits the converter output into two USB-C-compatible 5V feeds: one goes through a USB-C cable into the Pi, the other goes to the printer's bare-wire VH/GND pins.
-
-Powering the Pi 5 via the GPIO 5V pins bypasses the polyfuse and power negotiation circuitry; it works but offers no protection against shorts or surges. Always go through USB-C if possible.
 
 ## Critical notes
 
@@ -84,12 +90,14 @@ The button has 4 spade terminals: 2 for the microswitch, 2 for the LED. Standard
 |---|---|---|
 | Microswitch (1) | Pin 9 | GND |
 | Microswitch (2) | Pin 11 (GPIO 17) | Input |
-| LED (+) | Pin 2 | 5V |
+| LED (+) | Pin 4 (5V) or shared with WAGO +5V | 5V |
 | LED (-) | Pin 14 | GND |
 
 The microswitch is not polarity-sensitive - either of its two terminals can go to GND or to GPIO. The LED has marked + and - terminals on the gray plastic housing.
 
 The Pi's internal pull-up resistor on GPIO 17 is enabled in software (via `gpiozero.Button(17, pull_up=True)`), so no external resistor is needed for the button.
+
+Note: GPIO pin 2 is being used by the WAGO 5V feed. The button LED uses **pin 4** (the other 5V pin) instead.
 
 ## Initial setup gotchas
 
@@ -98,3 +106,4 @@ The Pi's internal pull-up resistor on GPIO 17 is enabled in software (via `gpioz
 - **The printer auto-detects as `/dev/usb/lp0`** on Bookworm. No driver needed.
 - **The DSI screen auto-detects** with `display_auto_detect=1` - no overlay needed for the Freenove panel.
 - **WAGO lever connectors** require ~10mm of stripped wire and the lever fully lifted before insertion. Always tug-test each wire after closing the lever.
+- **Verify converter output voltage** before first power-up. The DC-DC converter should output a stable 5.0V (4.95-5.10V is acceptable). If it's outside that range, do not connect the Pi - either adjust the converter (if adjustable) or replace it.
