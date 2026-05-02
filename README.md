@@ -19,6 +19,10 @@ A Raspberry Pi 5 photobooth with live preview, touchscreen UI, and thermal recei
 - Arcade-style illuminated push button
 - 12V LiPo battery + 12V to 5V DC-DC converter (printer power)
 
+Most items can be found here: [Amazon List](https://www.amazon.com/shop/cupidbity/list/DE4TQPVUFN4V?ref_=aipsflist)
+
+Thermal printer: [Mini Thermal Receipt Printer (The Pi Hut)](https://thepihut.com/products/mini-thermal-receipt-printer?srsltid=AfmBOoqyFy_vYgifQd-CT2KruQv0nRyC9_tgL9VE92RPIDdgnvrLr6e5)
+
 See [`docs/hardware.md`](docs/hardware.md) for wiring details.
 
 ## Software setup
