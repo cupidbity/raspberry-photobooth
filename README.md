@@ -40,7 +40,7 @@ sudo apt install -y python3-picamera2 python3-pil python3-pip python3-venv git r
 
 ```bash
 cd ~
-git clone <your-repo-url> photobooth
+git clone https://github.com/cupidbity/raspberry-photobooth photobooth
 cd photobooth
 python3 -m venv venv --system-site-packages
 source venv/bin/activate
