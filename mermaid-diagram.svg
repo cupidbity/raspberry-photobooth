@@ -1,0 +1,115 @@
+<svg style="--bg:#424242;--fg:#FAFAFA;--line:#9e9e9e;--accent:#e0e0e0;--muted:#9e9e9e;--surface:#616161;--border:#bdbdbd;background:var(--bg)" height="724" width="2382.5375" viewBox="0 0 2382.5375 724" xmlns="http://www.w3.org/2000/svg" id="markdown_mermaid_markdown_code_05e6e2de3966be6624cec48f2a4ae618"><rect width="100%" height="100%" fill="#ffffff"/>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap');
+  text { font-family: 'Inter', system-ui, sans-serif; }
+  svg {
+    /* Derived from --bg and --fg (overridable via --line, --accent, etc.) */
+    --_text:          var(--fg);
+    --_text-sec:      var(--muted, color-mix(in srgb, var(--fg) 60%, var(--bg)));
+    --_text-muted:    var(--muted, color-mix(in srgb, var(--fg) 40%, var(--bg)));
+    --_text-faint:    color-mix(in srgb, var(--fg) 25%, var(--bg));
+    --_line:          var(--line, color-mix(in srgb, var(--fg) 30%, var(--bg)));
+    --_arrow:         var(--accent, color-mix(in srgb, var(--fg) 50%, var(--bg)));
+    --_node-fill:     var(--surface, color-mix(in srgb, var(--fg) 3%, var(--bg)));
+    --_node-stroke:   var(--border, color-mix(in srgb, var(--fg) 20%, var(--bg)));
+    --_group-fill:    var(--bg);
+    --_group-hdr:     color-mix(in srgb, var(--fg) 5%, var(--bg));
+    --_inner-stroke:  color-mix(in srgb, var(--fg) 12%, var(--bg));
+    --_key-badge:     color-mix(in srgb, var(--fg) 10%, var(--bg));
+  }
+</style>
+<defs>
+  <marker orient="auto" refY="2.4" refX="8" markerHeight="4.8" markerWidth="8" id="arrowhead">
+    <polygon fill="var(--_arrow)" points="0 0, 8 2.4, 0 4.8"/>
+  </marker>
+  <marker orient="auto-start-reverse" refY="2.4" refX="0" markerHeight="4.8" markerWidth="8" id="arrowhead-start">
+    <polygon fill="var(--_arrow)" points="8 0, 0 2.4, 8 4.8"/>
+  </marker>
+</defs>
+<polyline marker-end="url(#arrowhead)" stroke-width="0.75" stroke="var(--_line)" fill="none" points="496.3749999999999,76 496.3749999999999,116"/>
+<polyline marker-end="url(#arrowhead)" stroke-width="0.75" stroke="var(--_line)" fill="none" points="496.3749999999999,152 496.3749999999999,172 786.4124999999999,172 786.4124999999999,192"/>
+<polyline marker-end="url(#arrowhead)" stroke-width="0.75" stroke="var(--_line)" fill="none" points="496.3749999999999,152 496.3749999999999,172 373.57499999999993,172 373.57499999999993,192"/>
+<polyline marker-end="url(#arrowhead)" stroke-width="0.75" stroke="var(--_line)" fill="none" points="786.4124999999999,228 786.4124999999999,268"/>
+<polyline marker-end="url(#arrowhead)" stroke-width="0.75" stroke="var(--_line)" fill="none" points="373.57499999999993,228 373.57499999999993,268"/>
+<polyline marker-end="url(#arrowhead)" stroke-width="0.75" stroke="var(--_line)" fill="none" points="786.4124999999999,304 786.4124999999999,324 871.55,324 871.55,344"/>
+<polyline marker-end="url(#arrowhead)" stroke-width="0.75" stroke="var(--_line)" fill="none" points="373.57499999999993,304 373.57499999999993,324 537.425,324 537.425,344"/>
+<polyline marker-end="url(#arrowhead)" stroke-width="0.75" stroke="var(--_line)" fill="none" points="786.4124999999999,304 786.4124999999999,324 693.3999999999999,324 693.3999999999999,572"/>
+<polyline marker-end="url(#arrowhead)" stroke-width="0.75" stroke="var(--_line)" fill="none" points="373.57499999999993,304 373.57499999999993,324 209.72500000000002,324 209.72500000000002,344"/>
+<polyline marker-end="url(#arrowhead)" stroke-width="0.75" stroke="var(--_line)" fill="none" points="871.55,380 871.55,438 1482.4125,438"/>
+<polyline marker-end="url(#arrowhead)" stroke-width="0.75" stroke="var(--_line)" fill="none" points="537.425,380 537.425,438 1482.4125,438"/>
+<polyline marker-end="url(#arrowhead)" stroke-width="0.75" stroke="var(--_line)" fill="none" points="693.3999999999999,608 693.3999999999999,666 750.5749999999998,666"/>
+<polyline marker-end="url(#arrowhead)" stroke-width="0.75" stroke="var(--_line)" fill="none" points="209.72500000000002,380 209.72500000000002,666 539.8249999999998,666"/>
+<polyline marker-end="url(#arrowhead)" stroke-width="0.75" stroke="var(--_line)" fill="none" points="1616.3874999999998,456 1616.3874999999998,476 2049.55,476 2049.55,496"/>
+<polyline marker-end="url(#arrowhead)" stroke-width="0.75" stroke="var(--_line)" fill="none" points="2049.55,532 2049.55,572"/>
+<polyline marker-end="url(#arrowhead)" stroke-width="0.75" stroke="var(--_line)" fill="none" points="2049.55,608 2049.55,666 750.5749999999998,666"/>
+<polyline marker-end="url(#arrowhead)" stroke-width="0.75" stroke="var(--_line)" fill="none" points="1616.3874999999998,456 1616.3874999999998,476 1689.6750000000002,476 1689.6750000000002,496"/>
+<polyline marker-end="url(#arrowhead)" stroke-width="0.75" stroke="var(--_line)" fill="none" points="1689.6750000000002,532 1689.6750000000002,572"/>
+<polyline marker-end="url(#arrowhead)" stroke-width="0.75" stroke="var(--_line)" fill="none" points="1616.3874999999998,456 1616.3874999999998,476 1074.725,476 1074.725,496"/>
+<polyline marker-end="url(#arrowhead)" stroke-width="0.75" stroke="var(--_line)" fill="none" points="1074.725,532 1074.725,572"/>
+<polyline marker-end="url(#arrowhead)" stroke-width="0.75" stroke="var(--_line)" fill="none" points="2240.7375,304 2240.7375,344"/>
+<polyline marker-end="url(#arrowhead)" stroke-width="0.75" stroke="var(--_line)" fill="none" points="1948.7875,304 1948.7875,344"/>
+<polyline marker-end="url(#arrowhead)" stroke-width="0.75" stroke="var(--_line)" fill="none" points="1560.3125,304 1560.3125,344"/>
+<polyline marker-end="url(#arrowhead)" stroke-width="0.75" stroke="var(--_line)" fill="none" points="1117.025,304 1117.025,344"/>
+<polyline marker-end="url(#arrowhead)" stroke-width="0.75" stroke="var(--_line)" fill="none" points="1885.1,228 1885.1,248 2240.7375,248 2240.7375,268"/>
+<polyline marker-end="url(#arrowhead)" stroke-width="0.75" stroke="var(--_line)" fill="none" points="1885.1,228 1885.1,248 1948.7875,248 1948.7875,268"/>
+<polyline marker-end="url(#arrowhead)" stroke-width="0.75" stroke="var(--_line)" fill="none" points="1885.1,228 1885.1,248 1560.3125,248 1560.3125,268"/>
+<polyline marker-end="url(#arrowhead)" stroke-width="0.75" stroke="var(--_line)" fill="none" points="1885.1,228 1885.1,248 1117.025,248 1117.025,268"/>
+<polyline marker-end="url(#arrowhead)" stroke-width="0.75" stroke="var(--_line)" fill="none" points="2240.7375,380 2240.7375,438 1750.3624999999997,438"/>
+<polyline marker-end="url(#arrowhead)" stroke-width="0.75" stroke="var(--_line)" fill="none" points="1948.7875,380 1948.7875,438 1750.3624999999997,438"/>
+<polyline marker-end="url(#arrowhead)" stroke-width="0.75" stroke="var(--_line)" fill="none" points="1560.3125,380 1560.3125,438 1482.4125,438"/>
+<polyline marker-end="url(#arrowhead)" stroke-width="0.75" stroke="var(--_line)" fill="none" points="1117.025,380 1117.025,438 1482.4125,438"/>
+<rect stroke-width="0.75" stroke="var(--_node-stroke)" fill="var(--_node-fill)" ry="0" rx="0" height="36" width="160.70000000000002" y="40" x="416.02499999999986"/>
+<rect stroke-width="0.75" stroke="var(--_node-stroke)" fill="var(--_node-fill)" ry="0" rx="0" height="36" width="389.50000000000006" y="116" x="301.6249999999999"/>
+<rect stroke-width="0.75" stroke="var(--_node-stroke)" fill="var(--_node-fill)" ry="0" rx="0" height="36" width="96.35000000000001" y="192" x="738.2375"/>
+<rect stroke-width="0.75" stroke="var(--_node-stroke)" fill="var(--_node-fill)" ry="0" rx="0" height="36" width="103.5" y="192" x="321.82499999999993"/>
+<rect stroke-width="0.75" stroke="var(--_node-stroke)" fill="var(--_node-fill)" ry="0" rx="0" height="36" width="325.15000000000003" y="268" x="623.8374999999999"/>
+<rect stroke-width="0.75" stroke="var(--_node-stroke)" fill="var(--_node-fill)" ry="0" rx="0" height="36" width="310.85" y="268" x="218.14999999999992"/>
+<rect stroke-width="0.75" stroke="var(--_node-stroke)" fill="var(--_node-fill)" ry="0" rx="0" height="36" width="296.55" y="344" x="723.275"/>
+<rect stroke-width="0.75" stroke="var(--_node-stroke)" fill="var(--_node-fill)" ry="0" rx="0" height="36" width="267.95000000000005" y="344" x="403.44999999999993"/>
+<rect stroke-width="0.75" stroke="var(--_node-stroke)" fill="var(--_node-fill)" ry="0" rx="0" height="36" width="332.3" y="572" x="527.2499999999999"/>
+<rect stroke-width="0.75" stroke="var(--_node-stroke)" fill="var(--_node-fill)" ry="0" rx="0" height="36" width="339.45000000000005" y="344" x="40"/>
+<rect stroke-width="0.75" stroke="var(--_node-stroke)" fill="var(--_node-fill)" ry="0" rx="0" height="36" width="267.95000000000005" y="420" x="1482.4125"/>
+<rect stroke-width="0.75" stroke="var(--_node-stroke)" fill="var(--_node-fill)" ry="0" rx="0" height="36" width="210.75000000000003" y="648" x="539.8249999999998"/>
+<rect stroke-width="0.75" stroke="var(--_node-stroke)" fill="var(--_node-fill)" ry="0" rx="0" height="36" width="117.80000000000001" y="496" x="1990.65"/>
+<rect stroke-width="0.75" stroke="var(--_node-stroke)" fill="var(--_node-fill)" ry="0" rx="0" height="36" width="282.25" y="572" x="1908.4250000000002"/>
+<rect stroke-width="0.75" stroke="var(--_node-stroke)" fill="var(--_node-fill)" ry="0" rx="0" height="36" width="253.65" y="496" x="1562.8500000000001"/>
+<rect stroke-width="0.75" stroke="var(--_node-stroke)" fill="var(--_node-fill)" ry="0" rx="0" height="36" width="389.50000000000006" y="572" x="1494.9250000000002"/>
+<rect stroke-width="0.75" stroke="var(--_node-stroke)" fill="var(--_node-fill)" ry="0" rx="0" height="36" width="253.65" y="496" x="947.8999999999999"/>
+<rect stroke-width="0.75" stroke="var(--_node-stroke)" fill="var(--_node-fill)" ry="0" rx="0" height="36" width="382.35" y="572" x="883.55"/>
+<rect stroke-width="0.75" stroke="var(--_node-stroke)" fill="var(--_node-fill)" ry="0" rx="0" height="36" width="260.8" y="192" x="1754.6999999999998"/>
+<rect stroke-width="0.75" stroke="var(--_node-stroke)" fill="var(--_node-fill)" ry="0" rx="0" height="36" width="203.60000000000002" y="268" x="2138.9375"/>
+<rect stroke-width="0.75" stroke="var(--_node-stroke)" fill="var(--_node-fill)" ry="0" rx="0" height="36" width="139.25" y="344" x="2171.1125"/>
+<rect stroke-width="0.75" stroke="var(--_node-stroke)" fill="var(--_node-fill)" ry="0" rx="0" height="36" width="203.60000000000002" y="268" x="1846.9875"/>
+<rect stroke-width="0.75" stroke="var(--_node-stroke)" fill="var(--_node-fill)" ry="0" rx="0" height="36" width="396.65000000000003" y="344" x="1750.4624999999999"/>
+<rect stroke-width="0.75" stroke="var(--_node-stroke)" fill="var(--_node-fill)" ry="0" rx="0" height="36" width="103.5" y="268" x="1508.5625"/>
+<rect stroke-width="0.75" stroke="var(--_node-stroke)" fill="var(--_node-fill)" ry="0" rx="0" height="36" width="332.3" y="344" x="1394.1625"/>
+<rect stroke-width="0.75" stroke="var(--_node-stroke)" fill="var(--_node-fill)" ry="0" rx="0" height="36" width="110.65" y="268" x="1061.7"/>
+<rect stroke-width="0.75" stroke="var(--_node-stroke)" fill="var(--_node-fill)" ry="0" rx="0" height="36" width="146.4" y="344" x="1043.825"/>
+<text fill="var(--_text)" font-weight="500" font-size="13" dy="0.35em" text-anchor="middle" y="58" x="496.3749999999999">"12V LiPo Battery"</text>
+<text fill="var(--_text)" font-weight="500" font-size="13" dy="0.35em" text-anchor="middle" y="134" x="496.3749999999999">"12V to node_5V DC-DC Converter\n5V node_5A rated"</text>
+<text fill="var(--_text)" font-weight="500" font-size="13" dy="0.35em" text-anchor="middle" y="210" x="786.4124999999999">"5V Rail"</text>
+<text fill="var(--_text)" font-weight="500" font-size="13" dy="0.35em" text-anchor="middle" y="210" x="373.57499999999993">"GND Rail"</text>
+<text fill="var(--_text)" font-weight="500" font-size="13" dy="0.35em" text-anchor="middle" y="286" x="786.4124999999999">"WAGO 3-Port Connector #1\nPositive Rail"</text>
+<text fill="var(--_text)" font-weight="500" font-size="13" dy="0.35em" text-anchor="middle" y="286" x="373.57499999999993">"WAGO 3-Port Connector #2\nGround Rail"</text>
+<text fill="var(--_text)" font-weight="500" font-size="13" dy="0.35em" text-anchor="middle" y="362" x="871.55">"Raspberry Pi 5\nGPIO Pin 2: node_5V"</text>
+<text fill="var(--_text)" font-weight="500" font-size="13" dy="0.35em" text-anchor="middle" y="362" x="537.425">"Raspberry Pi 5\nGPIO Pin 6: GND"</text>
+<text fill="var(--_text)" font-weight="500" font-size="13" dy="0.35em" text-anchor="middle" y="590" x="693.3999999999999">"CSN-A4L Thermal Printer\nPower Pin 3: VH"</text>
+<text fill="var(--_text)" font-weight="500" font-size="13" dy="0.35em" text-anchor="middle" y="362" x="209.72500000000002">"CSN-A4L Thermal Printer\nPower Pin 1: GND"</text>
+<text fill="var(--_text)" font-weight="500" font-size="13" dy="0.35em" text-anchor="middle" y="438" x="1616.3874999999998">"Raspberry Pi 5\n4GB or node_8GB"</text>
+<text fill="var(--_text)" font-weight="500" font-size="13" dy="0.35em" text-anchor="middle" y="666" x="645.1999999999998">"CSN-A4L Thermal Printer"</text>
+<text fill="var(--_text)" font-weight="500" font-size="13" dy="0.35em" text-anchor="middle" y="514" x="2049.55">"USB-A Port"</text>
+<text fill="var(--_text)" font-weight="500" font-size="13" dy="0.35em" text-anchor="middle" y="590" x="2049.55">"Printer USB Data\nTTL Port Unused"</text>
+<text fill="var(--_text)" font-weight="500" font-size="13" dy="0.35em" text-anchor="middle" y="514" x="1689.6750000000002">"CAM/DISP Port A\n22-pin 0.5mm"</text>
+<text fill="var(--_text)" font-weight="500" font-size="13" dy="0.35em" text-anchor="middle" y="590" x="1689.6750000000002">"Freenove 5 inch DSI Screen\n800x480 FT5x06 Touch"</text>
+<text fill="var(--_text)" font-weight="500" font-size="13" dy="0.35em" text-anchor="middle" y="514" x="1074.725">"CAM/DISP Port B\n22-pin 0.5mm"</text>
+<text fill="var(--_text)" font-weight="500" font-size="13" dy="0.35em" text-anchor="middle" y="590" x="1074.725">"OV5647 Camera\n22-pin to 15-pin cable if needed"</text>
+<text fill="var(--_text)" font-weight="500" font-size="13" dy="0.35em" text-anchor="middle" y="210" x="1885.1">"24mm Illuminated Arcade Button"</text>
+<text fill="var(--_text)" font-weight="500" font-size="13" dy="0.35em" text-anchor="middle" y="286" x="2240.7375">"Microswitch Terminal 1"</text>
+<text fill="var(--_text)" font-weight="500" font-size="13" dy="0.35em" text-anchor="middle" y="362" x="2240.7375">"Pi Pin 9: GND"</text>
+<text fill="var(--_text)" font-weight="500" font-size="13" dy="0.35em" text-anchor="middle" y="286" x="1948.7875">"Microswitch Terminal 2"</text>
+<text fill="var(--_text)" font-weight="500" font-size="13" dy="0.35em" text-anchor="middle" y="362" x="1948.7875">"Pi Pin 11: GPIO17 Input\nInternal Pull-up Enabled"</text>
+<text fill="var(--_text)" font-weight="500" font-size="13" dy="0.35em" text-anchor="middle" y="286" x="1560.3125">"LED Plus"</text>
+<text fill="var(--_text)" font-weight="500" font-size="13" dy="0.35em" text-anchor="middle" y="362" x="1560.3125">"Pi Pin 4: node_5V\nor WAGO Positive Rail"</text>
+<text fill="var(--_text)" font-weight="500" font-size="13" dy="0.35em" text-anchor="middle" y="286" x="1117.025">"LED Minus"</text>
+<text fill="var(--_text)" font-weight="500" font-size="13" dy="0.35em" text-anchor="middle" y="362" x="1117.025">"Pi Pin 14: GND"</text>
+</svg>

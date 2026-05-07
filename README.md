@@ -85,6 +85,10 @@ source ~/.bashrc
 photobooth
 ```
 
+## System Diagram
+
+![System Diagram](mermaid-diagram.svg)
+
 ## Flow
 
 1. **Welcome** - Custom design fills the screen. Wait for input.

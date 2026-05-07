@@ -13,6 +13,10 @@
 | 12V to 5V DC-DC converter | Steps battery down to 5V |
 | WAGO lever connectors (3-port) | Distributes 5V to Pi and printer |
 
+## System Diagram
+
+![System Diagram](mermaid-diagram.svg)
+
 ## Power architecture
 
 This build runs entirely off a 12V LiPo battery. The power chain looks like this:
