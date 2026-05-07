@@ -26,8 +26,9 @@ PRINTER_DEVICE = "/dev/usb/lp0"
 PRINTER_WIDTH_PX = 384
 BUTTON_PIN = 17
 
-ASSETS_DIR = Path.home() / "photobooth" / "assets"
-PHOTOS_DIR = Path.home() / "photobooth" / "captures"
+BASE_DIR = Path(__file__).resolve().parent
+ASSETS_DIR = BASE_DIR / "assets"
+PHOTOS_DIR = BASE_DIR / "captures"
 BACKGROUND_FILE = ASSETS_DIR / "screen.png"
 FONT_FILE = ASSETS_DIR / "BERKY.ttf"
 
@@ -132,6 +133,7 @@ def main():
     state = STATE_WELCOME
     state_start = time.time()
     last_capture_path = None
+    button_prev = False
     print("Photobooth running. Press ESC or Q to quit.")
 
     running = True
@@ -149,8 +151,10 @@ def main():
             elif event.type in (pygame.MOUSEBUTTONDOWN, pygame.FINGERDOWN):
                 triggered = True
 
-        if button.is_pressed:
+        button_now = button.is_pressed
+        if button_now and not button_prev:
             triggered = True
+        button_prev = button_now
 
         if elapsed < DEBOUNCE:
             triggered = False
@@ -183,7 +187,7 @@ def main():
                 pygame.time.wait(80)
 
                 # Capture
-                ts = datetime.now().strftime("%Y%m%d_%H%M%S")
+                ts = datetime.now().strftime("%Y%m%d_%H%M%S_%f")
                 last_capture_path = PHOTOS_DIR / f"photo_{ts}.jpg"
 
                 capture_config = picam2.create_still_configuration(
